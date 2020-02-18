@@ -1,5 +1,4 @@
-# study
-
+## stud
 ## Project setup
 ```
 npm install
