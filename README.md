@@ -1,4 +1,5 @@
-## stud
+## study
+yuchuan 使用Vue的项目
 ## Project setup
 ```
 npm install
