@@ -1,11 +1,11 @@
 /** @format */
 
 module.exports = {
-	publicPath: "/",
-	outputDir: "dist",
-	assetsDir: "assets",
-	devServer: {
-		disableHostCheck: true,
-		proxy: null,
-	},
+    publicPath: "/",
+    outputDir: "tool",
+    assetsDir: "assets",
+    devServer: {
+        disableHostCheck: true,
+        proxy: null,
+    },
 };

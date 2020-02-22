@@ -1,23 +1,22 @@
 <template>
   <div class="select-wrap">
-    <el-form :model="data" ref="data" label-position="left" label-width="0px" class="select-box">
+    <el-form :model="data" ref="data" label-position="left">
       <el-form-item prop="rooms">
         <i class="el-icon-school" style="font-size: 1.2rem"></i>
         <i class="el-icon-edit el-input__icon" slot="suffix"></i>
         <span class="demonstration">选择楼栋房间：</span>
-        <el-cascader
-          style="width:50%"
-          placeholder="可搜索"
+        <el-cascader-panel
+          style="width: 50%;margin: auto;"
           v-model="data.rooms"
-          size="medium"
           clearable
-          :change="change()"
+          size="medium"
+          placeholder="选择房间"
           :show-all-levels="false"
+          change-on-select
           :options="options"
           :props="{ multiple: true,emitPath: true,leaf: 'value'}"
-          filterable
           :getCheckedNodes="true"
-        ></el-cascader>
+        ></el-cascader-panel>
       </el-form-item>
       <el-form-item>
         <el-popover placement="bottom" width="160" v-model="visible">
@@ -42,23 +41,22 @@
 export default {
   name: "ljb",
   beforeCreate() {
-    let pageHeight = window.innerHeight;
-    let pageWidth = window.innerWidth;
-    if (typeof pageWidth !== "number") {
-      if (document.compatMode == "CSS1Compat") {
-        pageWidth = document.documentElement.clientWidth;
-        pageHeight = document.documentElement.clientHeight;
-      } else {
-        pageWidth = document.body.clientWidth;
-        pageHeight = document.body.clientHeight;
-      }
-    }
-    const docStyle = document.documentElement.style;
-    docStyle.setProperty("--width", pageWidth);
-    docStyle.setProperty("--height", pageHeight);
+    // let pageHeight = window.innerHeight;
+    // let pageWidth = window.innerWidth;
+    // if (typeof pageWidth !== "number") {
+    //   if (document.compatMode == "CSS1Compat") {
+    //     pageWidth = document.documentElement.clientWidth;
+    //     pageHeight = document.documentElement.clientHeight;
+    //   } else {
+    //     pageWidth = document.body.clientWidth;
+    //     pageHeight = document.body.clientHeight;
+    //   }
+    // }
+    // const docStyle = document.documentElement.style;
+    // docStyle.setProperty("--width", pageWidth);
+    // docStyle.setProperty("--height", pageHeight);
   },
   methods: {
-    change() {},
     download() {
       if (!(this.id > 0)) {
         this.$message({
@@ -125,13 +123,13 @@ export default {
       };
     },
     submitForm() {
+      // console.log(this.data);
       const loading = this.$loading({
         lock: true,
         text: "正在提交loading...",
         spinner: "el-icon-loading",
         background: "rgba(0, 0, 0, 0.7)"
       });
-      console.log(this.data);
       let obj = {
         XY02: [],
         XY03: [],
@@ -211,7 +209,6 @@ export default {
         {
           value: "XY02",
           label: "2栋",
-          multiple: false,
           children: new Array(6).fill(0).map((v, i1) => ({
             value: i1 + 1,
             label: i1 + 1 + "层",
@@ -225,7 +222,6 @@ export default {
         {
           value: "XY05",
           label: "5栋",
-          multiple: false,
           children: new Array(6).fill(0).map((v, i1) => ({
             value: i1 + 2,
             label: i1 + 2 + "层",
@@ -239,7 +235,6 @@ export default {
         {
           value: "XY06",
           label: "6栋",
-          multiple: false,
           children: new Array(7).fill(0).map((v, i1) => ({
             value: i1 + 1,
             label: i1 + 1 + "层",
@@ -253,7 +248,6 @@ export default {
         {
           value: "XN12",
           label: "12栋",
-          multiple: false,
           children: new Array(4).fill(0).map((v, i1) => ({
             value: i1 + 1,
             label: i1 + 1 + "层",
@@ -267,7 +261,6 @@ export default {
         {
           value: "XN14",
           label: "14栋",
-          multiple: false,
           children: new Array(6).fill(0).map((v, i1) => ({
             value: i1 + 1,
             label: i1 + 1 + "层",
@@ -281,7 +274,6 @@ export default {
         {
           value: "XN16",
           label: "16栋",
-          multiple: false,
           children: new Array(6).fill(0).map((v, i1) => ({
             value: i1 + 1,
             label: i1 + 1 + "层",
@@ -299,13 +291,9 @@ export default {
 </script>
 <style>
 .select-wrap {
-  height: 100vh;
-  width: 100vw;
-  background: url("https://yulovexin.xyz/images/tmp/sgh.jpg");
-  background-size: 100% 100%;
-  float: left;
-}
-.select-box {
-  margin-top: 100px;
+  box-sizing: border-box;
+  height: auto;
+  text-align: center;
+  margin: auto;
 }
 </style>

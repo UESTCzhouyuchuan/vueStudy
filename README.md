@@ -1,24 +1,24 @@
 ## study
-yuchuan 使用Vue的项目
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+yuchuan 的 Vue 小项目，边学边做。
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 玉川的工具箱
 
-### Lints and fixes files
-```
-npm run lint
-```
+### unicode 转码工具
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+功能： 提供实时的 unicode 码和字符的双向转码。
+
+网址 <http://tool.myhoney.club/unicode>
+
+演示截图如下：
+
+![unicodeTool](./img/unicode1.png)
+
+实现原理：
+
+主要利用`ES6`新增的两个 API
+
+- `codePointAt`
+- `fromCodePoint()`
+
+**注意点**：在字符转 unicode 码时，要注意字符之间是否由空格分开，选择对应选项，否则会同时将空格转码。

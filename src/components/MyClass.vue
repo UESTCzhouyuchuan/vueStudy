@@ -52,9 +52,6 @@
         </el-form-item>
       </el-form>
     </div>
-    <p style="text-align:right;margin-right:20px;">author:yuchuanzhou</p>
-    <a href="https://github.com/UESTCzhouyuchuan" target="_blank">Github</a>
-    <a href="https:blog.yulovexin.xyz" target="_blank">Blog</a>
   </div>
 </template>
 <script>
