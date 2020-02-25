@@ -15,6 +15,7 @@ import vuex1 from "./vuex/vuex1.vue";
 import vuex2 from "./vuex/vuex2.vue";
 import zy from "./components/zy.vue";
 import unicode from "./components/unicode.vue";
+import Luck from "./components/Luck.vue"
 const routes = [
     { path: "/", component: Home, meta: { title: "home" } },
     { path: "/home", component: Home, meta: { title: "home" } },
@@ -31,6 +32,7 @@ const routes = [
         meta: { title: "大二班" },
     },
     { path: "/unicode", name: "unicode", component: unicode, meta: { title: "unicode转码" } },
+    { path: "/Luck", name: "luck", component: Luck, meta: { title: "随机抽人" } },
     { path: "/zy", component: zy, meta: { title: "中药" } },
     { path: "*", redirect: "/", meta: { title: "..." } },
 ];

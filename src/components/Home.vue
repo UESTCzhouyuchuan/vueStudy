@@ -5,6 +5,7 @@
       <router-link :to="{ name: 'ljb' }">/宿管会垃圾表</router-link>
       <router-link :to="{ name: 'myClass' }">/我的大二班</router-link>
       <router-link :to="{ name: 'unicode' }">/unicode转码</router-link>
+      <router-link :to="{ name: 'luck' }">/幸运抽奖</router-link>
     </div>
   </div>
 </template>
